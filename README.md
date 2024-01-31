@@ -1,4 +1,4 @@
-# quickmeet
+# Personal Gmeet
 A video chat/meeting webapp using WebRTC and WebSockets (socket.io). Basically a Google Meet clone  + personal Gmeet for certain teams 
 
 ## Current Features?
