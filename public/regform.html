@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Information Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white; /* Set the background color of the body to black */
+        }
+
+        .card {
+            max-width: 600px;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #000; /* Set the background color of the card to black */
+            color: #fff; /* Set the text color of the card to white */
+        }
+
+        .card h2 {
+            color: #fff; /* Set the text color of heading tags inside the card to white */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Register Yourself</h2>
+
+        <form id="personForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" autocomplete="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+
+            <label for="team">Team:</label>
+            <select id="team" name="team" autocomplete="team" required>
+                <option value="team1">Team 1</option>
+                <option value="team2">Team 2</option>
+                <option value="team3">Team 3</option>
+                <option value="team4">Team 4</option>
+                <option value="team5">Team 5</option>
+            </select>    
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" autocomplete="bday" required>
+            
+
+                <button type="submit">Submit</button>
+            </form>
+            
+        </form>
+    </div>
+
+
+    <script>
+        document.getElementById('personForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var team = document.getElementById('team').value;
+            var dob = document.getElementById('dob').value;
+        
+            if (!email.includes('@')) {
+                alert('Invalid email format. Please include "@" in the email address.');
+                return;
+            }
+        
+            // Create an object with the form data
+            var formData = {
+                name: name,
+                email: email,
+                team: team,
+                dob: dob
+            };
+        
+            // Make an AJAX request to the server to handle the form submission
+            const endpointUrl = 'http://127.0.0.1:5500/submit'; // Adjust the URL as needed
+            console.log('Submitting to:', endpointUrl);
+        
+         // ... (previous code)
+
+fetch(endpointUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+})
+    .then(response => {
+        if (!response.ok) {
+            console.error('Server response not OK:', response.status, response.statusText);
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Response from server:', data);
+        
+        if (data.success) {
+            window.alert('Data successfully entered!');
+        } else {
+            // Handle other cases if needed
+            window.alert('Failed to enter data. Check the server response.');
+        }
+    })
+    .catch(error => {
+        console.error('Error inserting data into the database:', error);
+        window.alert('Error inserting data into the database. Check the console for details.');
+    });
+
+        });
+        
+    </script>
+
+</body>
+</html>

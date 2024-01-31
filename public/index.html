@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PersonalMeet - Video Call & Chat</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/6510466b6c.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-row md:flex-row items-center">
+            <navbar>
+                <a href="#" class="flex w-40">
+                    <img src="/images/favicon.png" alt="logo" class="cursor-pointer">
+                </a>
+            
+
+                <a href="http://127.0.0.1:5501/public/regform.html" class="reg" style="display: inline-block; padding: 10px 15px; background-color: #3498db; color: #fff; text-decoration: none; border-radius: 5px; margin-right:-4500px;">Register Yourself</a>
+   
+
+                <a href="https://workspace.google.com/intl/en_in/pricing.html" target="_blank"
+                    class="mr-10 cursor-pointer hover:text-gray-900"></a>
+
+                <a href="https://workspace.google.com/intl/en_in/contact-form/?source=gafb-pricing-enterprise-en-IN"
+                    target="_blank" class="mr-10 cursor-pointer hover:text-gray-900"></a>
+
+                <a href="https://workspace.google.com/intl/en_in/training/"
+                    class="mr-10 cursor-pointer hover:text-gray-900"></a>
+
+                <a href="https://workspace.google.com/intl/en_in/?utm_source=google&utm_medium=cpc&utm_campaign=1011352-Workspace-APAC-IN-en-BKWS-EXA-HV&utm_content=text-ad-none-none-DEV_c-CRE_608344336739-ADGP_Hybrid+%7C+BKWS+-+EXA+%7C+Txt+~+G+Suite_1-KWID_43700071931903936-kwd-35154496839&userloc_9302611-network_g&utm_term=KW_google%20suits&gclid=Cj0KCQjw94WZBhDtARIsAKxWG--hDQkZ4ujQiyJjaOAGwqlzkbz8arPgJzMwgXBnBm0dbhqm3r1FIqQaAoLQEALw_wcB&gclsrc=aw.ds"
+                    class="mr-10 cursor-pointer hover:text-gray-900"></a>    
+
+                
+
+
+            </navbar>
+        </div>
+    </header>
+    <!-- <div class="landing"> -->
+        <!-- <div class="head-cont unselectable">
+            Welcome to QuickMeet!
+        </div> -->
+
+        <div class="main">
+            <div class="create-join">
+                <div class="text"><div class="head">Premium video meetings for everyone.</div>
+                <div class="subtext"> We re-engineered the service we built for secure, high-quality
+                    business meetings, Google Meet, to make it available for all..</div>
+                </div>
+                <button id="createroom" class="createroom-butt unselectable">Create Room</button><br>
+                <input type="text" name="room" spellcheck="false" placeholder="Enter Room Code" id="roomcode" class="roomcode"><br>
+                <div class="joinroom unselectable" id="joinroom">Join Room</div>
+            </div>
+            <div class="video-cont">
+                <video class="video-self" autoplay muted playsinline></video>
+                <div class="settings">
+                    <div class="device" id="mic"><i class="fas fa-microphone"></i></div>
+                    <div class="device" id="webcam"><i class="fas fa-video"></i></div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- <div class="main-cont">
+
+            <form class="roomform" action="room.html" method="GET">
+                <div class="formcont">
+                    <input type="text" name="name" placeholder="Enter your name" id="username" class="inputtext"><br>
+                    
+                    <button type="submit" class="butt unselectable" id="joinroom">Join Room</button>
+                    
+                </div>
+            </form>
+
+        </div> -->
+
+    <!-- </div> -->
+
+    <script src="js/landing.js"></script>
+</body>
+
+</html>
